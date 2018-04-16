@@ -1,0 +1,20 @@
+[
+	{
+		"id" : "1",
+		"name" : "Ivanenko",
+		"status" : "teacher",
+		"salary" : "7000"
+	},
+	{
+		"id" : "2",
+		"name" : "Petrov",
+		"status" : "lecturer",
+		"salary" : "17000"
+	},
+	{
+		"id" : "3",
+		"name" : "Levkiv",
+		"status" : "director",
+		"salary" : "23000"
+	}
+]
