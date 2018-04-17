@@ -1,6 +1,8 @@
 package ua.lits.team3;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lits.automation.java.team.EmployeeComparator;
 import ua.lits.team3.model.Employee;
 
 import java.io.File;
@@ -16,9 +18,16 @@ public class Application {
     File file = new File("src/main/resourses/json/employees.json");
     List<Employee> employeeList = retrieveEmployeesFromFile(file);
     
-    System.out.println("\nSorted list of employees using Comparable :");
+    System.out.println("Sorted list of employees using Comparable :\n");
 	Collections.sort(employeeList);
     printCollection(employeeList);
+    
+    System.out.println("******************************************");
+	
+	EmployeeComparator empComparator = new EmployeeComparator();
+	System.out.println("Sorted list of employees using Comparator:\n");
+	Collections.sort(employeeList, empComparator);
+	printCollection(employeeList);
   }
 
   /**
