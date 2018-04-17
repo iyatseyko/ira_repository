@@ -21,7 +21,7 @@ public class JsonParserTest {
 
 	
 	@Test	
-	public void lala () throws JsonProcessingException {
+	public void parseJson () throws JsonProcessingException {
 		
 		final Employee first = new Employee(); 
 		first.setName("AAAAA");
