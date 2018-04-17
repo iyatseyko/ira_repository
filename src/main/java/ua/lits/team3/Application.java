@@ -1,8 +1,10 @@
 package ua.lits.team3;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import lits.automation.java.team.EmployeeComparator;
+import ua.lits.team3.EmployeeComparator;
 import ua.lits.team3.model.Employee;
 
 import java.io.File;
@@ -37,9 +39,16 @@ public class Application {
    * @return list of Employees objects
    * @throws IOException
    */
-  private static List<Employee> retrieveEmployeesFromFile(File file) throws IOException {
+  public static List<Employee> retrieveEmployeesFromFile(File file) {
     ObjectMapper objectMapper = new ObjectMapper();
-    Employee[] employees = objectMapper.readValue(file, Employee[].class);
+    Employee[] employees;
+	try {
+		employees = objectMapper.readValue(file, Employee[].class);
+	} catch (IOException e) {
+		employees = null;
+		
+		e.printStackTrace();
+	}
     return Arrays.asList(employees);
   }
 
