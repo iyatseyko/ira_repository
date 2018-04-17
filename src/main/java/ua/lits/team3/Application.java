@@ -15,6 +15,9 @@ public class Application {
   public static void main(String[] args) throws IOException {
     File file = new File("src/main/resourses/json/employees.json");
     List<Employee> employeeList = retrieveEmployeesFromFile(file);
+    
+    System.out.println("\nSorted list of employees using Comparable :");
+	Collections.sort(employeeList);
     printCollection(employeeList);
   }
 
