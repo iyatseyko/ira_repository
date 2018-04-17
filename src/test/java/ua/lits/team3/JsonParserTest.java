@@ -30,7 +30,8 @@ public class JsonParserTest {
 		
 		final Employee second = new Employee(); 
 		second.setName("BBBB");
-		
+		second.setPosition("Doctor");
+		second.setPosition("5000");
 		
 		List <Employee> employees = new ArrayList <Employee> ();
 		employees.add(second);
